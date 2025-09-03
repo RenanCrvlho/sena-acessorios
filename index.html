@@ -60,12 +60,35 @@
     iframe { width: 100%; height: 250px; border-radius: 8px; }
 
     /* Responsivo */
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; display: none; background: #222; position: absolute; top: 60px; right: 0; width: 200px; padding: 1rem; }
-      nav ul.active { display: flex; }
-      .menu-toggle { display: block; cursor: pointer; font-size: 1.5rem; }
-      .nav-container { flex-wrap: wrap; }
-    }
+    /* Responsivo */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem; /* diminui o espaço lateral */
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem; 
+    margin-left: auto; /* garante que vá para a extrema direita */
+  }
+
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
     @media (min-width: 769px) {
       .menu-toggle { display: none; }
     }
