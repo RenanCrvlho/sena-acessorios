@@ -21,7 +21,7 @@
     nav li:hover { color: #cc0000; }
 
     /* Hero */
-    .hero { height: 100vh; background: url('src/Sena Acessórios.png') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; position: relative; }
+    .hero { height: 100vh; background: url('src/capa.jpg') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; position: relative; }
     .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
     .hero-content { position: relative; z-index: 1; padding: 1rem; }
     .hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
@@ -36,7 +36,7 @@
     /* Carrossel */
     .carousel { text-align: center; padding: 3rem 2rem; }
     .carousel-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .carousel-item { position: relative; min-width: 200px; max-width: 250px; height: 160px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+    .carousel-item { position: relative; min-width: 250px; max-width: 250px; height: 160px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
     .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
     .carousel-item span { position: absolute; bottom: 0; left: 0; width: 100%; padding: 8px; color: #fff; font-weight: bold; font-size: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
 
@@ -59,36 +59,53 @@
 
     iframe { width: 100%; height: 250px; border-radius: 8px; }
 
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 2000;
+      transition: transform 0.2s ease-in-out;
+    }
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
     /* Responsivo */
-    /* Responsivo */
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 1rem; /* diminui o espaço lateral */
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 1.8rem; 
-    margin-left: auto; /* garante que vá para a extrema direita */
-  }
-
-  nav ul {
-    flex-direction: column;
-    display: none;
-    background: #222;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-}
-
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 1rem;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        margin-left: auto;
+      }
+      nav ul {
+        flex-direction: column;
+        display: none;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+      nav ul.active {
+        display: flex;
+      }
+    }
     @media (min-width: 769px) {
       .menu-toggle { display: none; }
     }
@@ -103,10 +120,9 @@
       <nav>
         <ul>
           <li>Home</li>
-          <li>Quem Somos</li>
-          <li>Acessórios</li>
+          <li>Quem Somos</li>          
           <li>Galeria</li>
-          <li>Blog</li>
+          <li>Serviços</li>
           <li>Contato</li>
           <li>🔍</li>
         </ul>
@@ -155,7 +171,7 @@
         <span>Cortinas e acessórios</span>
       </div>
       <div class="carousel-item">
-        <img src="src/isolamento.png" alt="Isolamento acústico">
+        <img src="src/isolamento-acustico.png" alt="Isolamento acústico">
         <span>Isolamento acústico</span>
       </div>
       <div class="carousel-item">
@@ -199,6 +215,14 @@
       <p>Powered by Renan Carvalho</p>
     </div>
   </footer>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/554430311276" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 32 32" fill="white">
+      <path d="M16.001 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.922.922 5.625 2.496 7.855L4 29.333l5.62-1.478A13.26 13.26 0 0016 29.334c7.36 0 13.333-5.973 13.333-13.334 0-7.36-5.973-13.333-13.333-13.333zm0 24.04a10.67 10.67 0 01-5.44-1.493l-.39-.231-3.333.878.89-3.243-.254-.417a10.638 10.638 0 01-1.627-5.6c0-5.893 4.8-10.667 10.667-10.667 5.866 0 10.667 4.774 10.667 10.667 0 5.867-4.8 10.666-10.667 10.666zm5.893-7.987c-.32-.16-1.867-.917-2.16-1.027-.293-.107-.507-.16-.72.16-.213.32-.827 1.027-1.013 1.24-.187.213-.373.24-.693.08-.32-.16-1.36-.5-2.587-1.6-.957-.853-1.6-1.907-1.787-2.227-.187-.32-.02-.493.14-.653.147-.147.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.733-.987-2.373-.26-.627-.52-.533-.72-.547-.187-.013-.4-.013-.613-.013-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.253 3.44 5.453 4.827.76.327 1.36.52 1.827.667.767.243 1.467.207 2.013.127.613-.093 1.867-.76 2.133-1.493.267-.733.267-1.36.187-1.493-.08-.133-.293-.213-.613-.373z"/>
+    </svg>
+  </a>
+
 
   <script>
     const toggle = document.querySelector('.menu-toggle');
